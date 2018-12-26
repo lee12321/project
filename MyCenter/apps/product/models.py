@@ -18,9 +18,9 @@ class Category(BaseModel):
         verbose_name_plural = verbose_name
 
 
-class product(BaseModel):
+class Product(BaseModel):
     """产品详情"""
-    is_status_choices=(
+    is_status_choices = (
         (0, "初始化"),
         (1, "提交申请"),
         (2, "生产防伪码")
