@@ -1,5 +1,5 @@
 from django.db import models
-from db.base_model import BaseModel
+from MyCenter.db.base_model import BaseModel
 
 
 class User(BaseModel):
@@ -34,7 +34,7 @@ class CompanyType(BaseModel):
         return self.c_type
 
 
-class Company_content(BaseModel):
+class CompanyContent(BaseModel):
     """企业信息"""
 
     # 状态信息
@@ -56,9 +56,9 @@ class Company_content(BaseModel):
                                   max_length=16,
                                   )
 
-    relation_info = models.CharField(verbose_name='联系电话',
-                                     max_length=11,
-                                     )
+    tel = models.CharField(verbose_name='联系电话',
+                           max_length=11,
+                           )
 
     email = models.CharField(verbose_name='邮箱',
                              max_length=32,
@@ -74,9 +74,9 @@ class Company_content(BaseModel):
                                         choices=State_choices,
                                         )
 
-    type = models.ForeignKey(to='CompanyType',
-                             verbose_name='企业类型'
-                             )
+    c_type = models.ForeignKey(to='CompanyType',
+                               verbose_name='企业类型'
+                               )
 
     class Meta:
         verbose_name = '用户信息管理'
