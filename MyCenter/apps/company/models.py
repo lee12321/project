@@ -22,9 +22,9 @@ class User(BaseModel):
 
 class CompanyType(BaseModel):
     """企业类型"""
-    c_type = models.CharField(max_length=20,
-                              verbose_name='类型名称'
-                              )
+    type = models.CharField(max_length=20,
+                            verbose_name='类型名称'
+                            )
 
     class Meta:
         verbose_name = '企业类型'
