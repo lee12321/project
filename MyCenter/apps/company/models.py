@@ -2,24 +2,6 @@ from django.db import models
 from MyCenter.db.base_model import BaseModel
 
 
-class User(BaseModel):
-    """企业用户"""
-    user_name = models.CharField(verbose_name='用户名',
-                                 max_length=16,
-                                 )
-
-    password = models.CharField(verbose_name='用户密码',
-                                max_length=32
-                                )
-
-    class Meta:
-        verbose_name = '用户登录信息管理'
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return self.user_name
-
-
 class CompanyType(BaseModel):
     """企业类型"""
     type = models.CharField(max_length=20,
@@ -31,10 +13,20 @@ class CompanyType(BaseModel):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.c_type
+        return self.type
 
 
-class CompanyContent(BaseModel):
+class Company(BaseModel):
+    """企业用户"""
+
+    user_name = models.CharField(verbose_name='用户名',
+                                 max_length=16,
+                                 )
+
+    password = models.CharField(verbose_name='用户密码',
+                                max_length=32
+                                )
+
     """企业信息"""
 
     # 状态信息
@@ -66,6 +58,14 @@ class CompanyContent(BaseModel):
 
     site = models.CharField(verbose_name='注册地址',
                             max_length=64,
+                            )
+
+    province = models.CharField(verbose_name='省',
+                                max_length=32,
+                                )
+
+    city = models.CharField(verbose_name='市',
+                            max_length=32,
                             )
 
     c_document = models.ImageField(verbose_name='企业证件')
