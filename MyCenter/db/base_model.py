@@ -13,7 +13,7 @@ class BaseModel(models.Model):
                                        )
     is_delete = models.BooleanField(default=False,
                                     verbose_name="是否删除",
-                                        )
+                                    )
 
     class Meta:
         # 设置为抽象的类, 只能被继承

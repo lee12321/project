@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from apps.company import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^promgt/', include("product.urls", namespace='product'))
+    url(r'^api/company/', include("company.urls", namespace='product'))
 ]

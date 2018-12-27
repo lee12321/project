@@ -1,6 +1,6 @@
 from django.db import models
-from MyCenter.db.base_model import BaseModel
-from ..company.models import Company
+from db.base_model import BaseModel
+from company.models import Company
 
 
 class Category(BaseModel):

@@ -1,5 +1,5 @@
 from django.db import models
-from MyCenter.db.base_model import BaseModel
+from db.base_model import BaseModel
 
 
 class CompanyType(BaseModel):
@@ -75,7 +75,7 @@ class Company(BaseModel):
                                         )
 
     c_type = models.ForeignKey(to='CompanyType',
-                               verbose_name='企业类型'
+                               verbose_name='企业类型',
                                )
 
     class Meta:

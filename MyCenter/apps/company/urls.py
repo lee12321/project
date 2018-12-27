@@ -1,6 +1,7 @@
 from django.conf.urls import url
-from .views import ContentView
+from company import views
 
 urlpatterns = [
-    url(r'^content/$', ContentView.as_view(), name='ContentView')
+    url(r'^$', views.company_list, name='company_list'),
+    url(r'^(?P<c_id>\d+)$', views.company_detail, name='company')
 ]
