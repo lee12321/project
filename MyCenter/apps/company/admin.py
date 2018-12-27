@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import CompanyType, CompanyContent
+from .models import CompanyType, Company
 
 admin.site.site_header = '后台企业管理平台'
 
@@ -10,6 +10,6 @@ class CompanyTypeAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(CompanyContent)
+@admin.register(Company)
 class CompanyContentAdmin(admin.ModelAdmin):
     pass

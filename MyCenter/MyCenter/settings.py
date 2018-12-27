@@ -37,11 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'product.apps.ProductConfig',
-<<<<<<< HEAD
-    'management',
-=======
+    'management.apps.ManagementConfig',
     'company.apps.CompanyConfig',
->>>>>>> master
+
 ]
 
 MIDDLEWARE = [
@@ -102,6 +100,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTH_MODEL
+AUTH_USER_MODEL = "management.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
