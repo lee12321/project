@@ -53,7 +53,7 @@ class CategoryView(View):
             list.append(good)
         goods_data = json.dumps(list)
         print(goods_data)
-        # return JsonResponse(goods_data)
+        # return JsonResponse({'data': goods, 'error': 0})
         return HttpResponse(goods_data, content_type='application/json')
 
     def post(self, requtst):
