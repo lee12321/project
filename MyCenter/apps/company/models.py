@@ -75,7 +75,7 @@ class Company(BaseModel):
                                         )
 
     c_type = models.ForeignKey(to='CompanyType',
-                               verbose_name='企业类型'
+                               verbose_name='企业类型',
                                )
 
     class Meta:

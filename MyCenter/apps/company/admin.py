@@ -11,5 +11,5 @@ class CompanyTypeAdmin(admin.ModelAdmin):
 
 
 @admin.register(Company)
-class CompanyContentAdmin(admin.ModelAdmin):
+class CompanyAdmin(admin.ModelAdmin):
     pass
