@@ -20,5 +20,5 @@ from apps.company import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/company/', include("company.urls", namespace='product'))
+    url(r'^api/company/', include("company.urls", namespace='company'))
 ]

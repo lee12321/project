@@ -23,16 +23,16 @@ def company_type(request):
 
 
 def company_search(request):
-    c_pro = request.GET.get('c_pro', None)
+    c_prov = request.GET.get('c_prov', None)
     c_city = request.GET.get('c_city', None)
     c_cate = request.GET.get('c_cate', None)
-    companys = Company.objects.all()
+    company = Company.objects.all()
     if c_cate:
-        companys = companys.filter(c_cate=c_cate)
+        company = company.filter(c_cate=c_cate)
     if c_city:
-        companys = companys.filter(c_city=c_city)
-    if c_pro:
-        companys = companys.filter(c_pro=c_pro)
+        company = company.filter(c_city=c_city)
+    if c_prov:
+        company = company.filter(c_pro=c_prov)
 
-    data = serializers.serialize('json', companys)
+    data = serializers.serialize('json', company)
     return HttpResponse(data, content_type="application/json")
