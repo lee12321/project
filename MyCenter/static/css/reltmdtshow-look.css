@@ -1,0 +1,43 @@
+.left_right{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .td_right{
+    width: 40%;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  .right_div{
+    background-color: rgb(172, 186, 201);
+    width: 100%;
+    color: black;
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 2px;
+    display: inline-block;
+  }
+  .right_div table{
+    width: 100%;
+  }
+  .right_div tr{
+    background-color: aliceblue;
+    height: 50px;
+  }
+  
+  .right_div td{
+    border: 1px solid rgb(160, 159, 159);
+    width: 33%;
+  }
+
+  .right_div tr.single{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(209, 3, 3);
+    font: 1em bolder;
+  }
+  .right_div tr.double{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: black
+  }

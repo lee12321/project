@@ -18,9 +18,9 @@ class Category(BaseModel):
         verbose_name_plural = verbose_name
 
 
-class product(BaseModel):
+class Product(BaseModel):
     """产品详情"""
-    is_status_choices=(
+    is_status_choices = (
         (0, "初始化"),
         (1, "提交申请"),
         (2, "生产防伪码")
@@ -37,7 +37,7 @@ class product(BaseModel):
     p_standard = models.CharField(verbose_name="产品规格",
                                   max_length=20
                                   )
-    p_date = models.DateTimeField(verbose_name="生产日期")
+    p_date = models.DateField(verbose_name="生产日期")
     p_period = models.CharField(verbose_name="保质期",
                                 max_length=20
                                 )
