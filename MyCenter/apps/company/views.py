@@ -25,10 +25,10 @@ def company_type(request):
 def company_search(request):
     c_prov = request.GET.get('c_prov', None)
     c_city = request.GET.get('c_city', None)
-    c_cate = request.GET.get('c_cate', None)
+    c_type = request.GET.get('c_type', None)
     company = Company.objects.all()
-    if c_cate:
-        company = company.filter(c_cate=c_cate)
+    if c_type:
+        company = company.filter(c_type=c_type)
     if c_city:
         company = company.filter(c_city=c_city)
     if c_prov:
