@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import Group as _Group, PermissionsMixin
 from django.contrib.auth.models import (AbstractUser, BaseUserManager)
 
 

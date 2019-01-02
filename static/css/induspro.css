@@ -1,0 +1,73 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+.left_right {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+}
+
+.left_div {
+  margin-top: 3px;
+}
+
+.right_div {
+  background-color: rgb(172, 186, 201);
+  width: 100%;
+  color: black;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.right_div tr {
+  background-color: aliceblue;
+  height: 60px;
+}
+
+.right_div td {
+  margin-right: 1px;
+}
+
+.td div.left_div {
+  margin-top: 0%;
+}
+
+.right_div th {
+  text-align: center;
+  width: 10%;
+  background-color: rgb(185, 185, 185);
+
+}
+
+.right_div table tr.single {
+  background-color: rgb(255, 255, 255);
+}
+
+.right_div table tr.double {
+  background-color: rgb(211, 211, 211);
+}
+
+.btn-reg {
+  border: none;
+  height: 33px;
+  width: 100px;
+  background: #4848ff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.btn-other {
+  border: none;
+  height: 33px;
+  width: 100px;
+  background: #ff6666;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.layui-table th {
+  text-align: center;
+}
