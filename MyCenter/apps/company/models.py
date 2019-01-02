@@ -79,7 +79,7 @@ class Company(BaseModel):
                                )
 
     class Meta:
-        verbose_name = '用户信息管理'
+        verbose_name = '企业信息'
         verbose_name_plural = verbose_name
 
     def __str__(self):

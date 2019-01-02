@@ -12,4 +12,5 @@ class CompanyTypeAdmin(admin.ModelAdmin):
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    pass
+    class Meta:
+        verbose_name = '企业'
