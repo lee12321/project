@@ -1,5 +1,6 @@
 from django.db import models
 from db.base_model import BaseModel
+from company.models import Company
 
 
 class Category(BaseModel):
@@ -31,9 +32,9 @@ class Product(BaseModel):
     p_type = models.CharField(verbose_name="产品类型",
                               max_length=20
                               )
-    company = models.CharField(verbose_name="生产厂商",
-                               max_length=50
-                               )
+    company = models.ForeignKey(to=Company,
+                                verbose_name="生产厂商",
+                                )
     p_standard = models.CharField(verbose_name="产品规格",
                                   max_length=20
                                   )

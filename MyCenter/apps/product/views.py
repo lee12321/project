@@ -4,6 +4,7 @@ from django.views import View
 from django.core import serializers
 from django.http import JsonResponse
 from product.models import Category, Product
+from company.models import Company
 import json
 
 """
@@ -74,12 +75,27 @@ class cate_proView(View):
 # 搜索
 class cate_searchVie(View):
     def get(self, request):
-        pro_province = request.GET.get('pro_province', None)
-        pro_city = request.GET.get('pro_city', None)
-        pro_product = request.GET.get('pro_product', None)
-        products = Product.objects.all()
-        if pro_province:
-            products = products.filter()
+        c_prov = request.GET.get('c_prov', None)
+        c_city = request.GET.get('c_city', None)
+        c_name = request.GET.get('c_name', None)
+        p_name = request.GET.get('p_name', None)
+        if p_name:
+            products = Product.objects.filter(p_name=p_name)
+            data = serializers.serialize('json', products)
+            return HttpResponse(data, content_type='application/json')
+        elif c_prov:
+            company = Company.objects.filter(province=c_prov)
+            if c_city:
+                company = company.filter(city=c_city)
+            if c_name:
+                company = company.filter(p_name=c_name)
+            products = company.product_set.all()
+            data = serializers.serialize('json', products)
+            return HttpResponse(data, content_type='application/json')
+        else:
+            products = Product.objects.all()
+            data = serializers.serialize('json', products)
+            return HttpResponse(data, content_type="application/json")
 
     def post(self, request):
         pass

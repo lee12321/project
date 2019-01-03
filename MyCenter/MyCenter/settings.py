@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 产品模块
     'product.apps.ProductConfig',
-    # api接口
-    'rest_framework',
+    'company.apps.CompanyConfig',
+
+
 ]
 
 MIDDLEWARE = [
