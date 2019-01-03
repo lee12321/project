@@ -22,7 +22,7 @@ urlpatterns = [
 
     # url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/prduct/', include("product.urls", namespace='products')),
+    url(r'^api/product/', include("product.urls", namespace='products')),
     url(r'^api/company/', include("company.urls", namespace='company')),
 
 ]
