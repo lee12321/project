@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.views import View
 from django.core import serializers
 from django.http import JsonResponse
-from apps.product.models import Category, Product
-from apps.company.models import Company
+from product.models import Category, Product
+from company.models import Company
 import json
 
 

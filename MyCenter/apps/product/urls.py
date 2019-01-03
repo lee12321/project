@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from apps.product.views import CategoryView, cate_proView
+from product.views import CategoryView, cate_proView
 
 urlpatterns = [
     url(r'^category/(?P<cate_id>\d+)/$', CategoryView.as_view(), name='CategoryView'),
