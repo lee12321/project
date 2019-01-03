@@ -19,8 +19,12 @@ from django.contrib import admin
 from apps.company import views
 
 urlpatterns = [
+
     # url(r'^admin/', admin.site.urls),
-    url(r'^api/company/', include("company.urls", namespace='company'))
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/prduct/', include("product.urls", namespace='products')),
+    url(r'^api/company/', include("company.urls", namespace='company')),
+
 ]
 
 urlpatterns += i18n_patterns(

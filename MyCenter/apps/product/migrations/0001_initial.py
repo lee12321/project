@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('p_name', models.CharField(max_length=50, verbose_name='产品名称')),
                 ('p_type', models.CharField(max_length=20, verbose_name='产品类型')),
                 ('p_standard', models.CharField(max_length=20, verbose_name='产品规格')),
-                ('p_date', models.DateTimeField(verbose_name='生产日期')),
+                ('p_date', models.DateField(verbose_name='生产日期')),
                 ('p_period', models.CharField(max_length=20, verbose_name='保质期')),
                 ('p_place', models.CharField(max_length=20, verbose_name='产地')),
                 ('anti_fake_logo', models.CharField(default='logo', max_length=20, verbose_name='防伪标识')),
