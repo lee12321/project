@@ -19,7 +19,11 @@ def company_detail(request, c_id):
 def company_type(request):
     company_types = CompanyType.objects.all()
     data = serializers.serialize('json', company_types)
-    return HttpResponse(data, content_type="application/json")
+    func = request.GET.get('callback')
+    # data = func + '(' + data + ')'
+    response = HttpResponse(data, content_type="application/json")
+    response['Access-Control-Allow-Origin'] = '*'
+    return response
 
 
 def company_search(request):

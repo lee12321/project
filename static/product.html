@@ -321,17 +321,24 @@
     }
     // 展示产品分类
     function show_cate(url, data) {
-        $.get(url, data, function (data, status) {
-            if (status === 'success') {
-                // console.debug('数据接收成功');
+        console.log('in show_cate')
+        $.ajax({
+            url: url,
+            dataType: "json",
+            data: data,
+            success: function(data){
+                console.log(data);
                 $.each(data, function (i, element) {
                     var dd = $('<dd><a></a></dd>');
-                    // console.debug(element.fields.cate_name
+                    console.debug(element.fields.cate_name)
                     dd.children("a").text(element.fields.cate_name);
                     dd.children("a").attr('id', element.pk)
                     $('#product-cate').append(dd);
                 })
-            }
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+                alert('error' + errorThrown);
+            },
         })
     }
     //  展示公司
@@ -362,12 +369,12 @@
     // 产品分类
     $(function () {
         // 添加产品分类
-        var url = '/api/product/category/';
+        var url = 'http://127.0.0.1:8000' + '/api/product/category/';
         var data = {};
         show_cate(url, data);
         // 添加公司分类
-        var url = '/api/company/category/';
-        show_company(url, data);
+        var url = 'http://127.0.0.1:8000' + '/api/company/category/';
+        //show_company(url, data);
     })
 </script>
 </body>
