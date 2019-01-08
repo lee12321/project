@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_css %}
+<link rel="stylesheet" href="{% static 'css/business.css'%}">
+
+<style>
+.layui-table th {
+  height: 48px;
+  text-align: center;
+  background: rgba(210, 207, 207, 1);
+}
+.layui-table td{
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.layui-table {
+  margin: 13px 0;
+}
+tbody>tr:nth-child(odd) td{
+  background: #f0f0f0;
+}
+tbody>tr:nth-child(even) td{
+  background: white;
+}
+/*.layui-tab-title>li{*/
+  /*border: none;*/
+/*}*/
+
+
+
+
+</style>
+{% endblock %}
+
+<body>
+<header>
+    <img class="logo_img" src="https://img.xiaopiu.com/userImages/img2664166613f66c8.png">
+    全国产品防伪溯源验证公共平台大数据监管中心
+</header>
+{% block content %}
+<div class="content layui-row">
+    <div class="left_div layui-col-xs2">
+
+<span class="layui-breadcrumb" lay-separator=">">
+                <a href="">首页</a>
+                <a href="">企业管理</a>
+                <a><cite>种养殖企业</cite></a>
+            </span>
+        <select id="" class="new_input" style="height: 30px">
+            <option value="">企业类别</option>
+            <option value="">种养殖企业</option>
+            <option value="">生产企业</option>
+            <option value="">学校单位食堂</option>
+            <option value="">流通企业</option>
+            <option value="">餐饮企业</option>
+            <option value="">三小企业</option>
+            <option value="">其它企业</option>
+        </select>
+
+        <select id="" class="new_input" style="height: 30px">
+            <option value="">选择省</option>
+            <option value="">北京</option>
+            <option value="">广东</option>
+            <option value="">山东</option>
+            <option value="">江苏</option>
+            <option value="">河南</option>
+            <option value="">河北</option>
+            <option value="">浙江</option>
+            <option value="">陕西</option>
+        </select>
+        <select id="" class="new_input" style="height: 30px">
+            <option value="">选择市</option>
+            <option value="">济南</option>
+            <option value="">南京</option>
+            <option value="">上海</option>
+            <option value="">石家庄</option>
+
+
+        </select>
+        <div style="margin-top:11px">
+            <button type="button" class="btn  btn-reg">确认</button>
+        </div>
+        <div style="margin-top: 44px; ">
+            <button class="btn  btn-other">导出Excel</button>
+        </div>
+
+
+    </div>
+
+    <div class="layui-col-xs10 ">
+        <div>
+            <table class="layui-table " lay-even lay-skin="line">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>企业名称</th>
+                    <th>信用代码</th>
+                    <th>联系方式</th>
+                    <th>注册地址</th>
+                    <th>是否防伪</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in company %}
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>{{c.c_name}}</td>
+                    <td>{{c.credit_code}}</td>
+                    <td>{{c.tel}}</td>
+                    <td>{{c.site}}</td>
+                    <td class="anti-fake">是</td>
+                    <td><a href="/emtoflawefm/breedingview.html">查看</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <!--<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">-->
+            <!--<ul class="layui-tab-title">-->
+            <!--<li class="layui-this">网站设置</li>-->
+            <!--<li>用户管理</li>-->
+            <!--<li>权限分配</li>-->
+            <!--<li>商品管理</li>-->
+            <!--<li>订单管理</li>-->
+            <!--</ul>-->
+            <!--<div class="layui-tab-content" style="height: 100px;">-->
+            <!--<div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>-->
+            <!--<div class="layui-tab-item">内容2</div>-->
+            <!--<div class="layui-tab-item">内容3</div>-->
+            <!--<div class="layui-tab-item">内容4</div>-->
+            <!--<div class="layui-tab-item">内容5</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

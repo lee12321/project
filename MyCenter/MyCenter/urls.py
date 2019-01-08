@@ -22,8 +22,8 @@ urlpatterns = [
 
     # url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/product/', include("product.urls", namespace='products')),
-    url(r'^api/company/', include("company.urls", namespace='company')),
+    url(r'^product/', include("product.urls", namespace='products')),
+    url(r'^company/', include("company.urls", namespace='company')),
 
 ]
 

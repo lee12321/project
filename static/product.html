@@ -26,15 +26,15 @@
                 <ul class="layui-nav" lay-filter="">
                     <li class="layui-nav-item">
                         <a href="javascript:;">企业管理</a>
-                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                            <dd><a href="./enterprise.html?q=what">企业分布图</a></dd>
-                            <dd><a href="./breeding.html">种养殖企业</a></dd>
-                            <dd><a href="./manufacturing.html">生产企业</a></dd>
-                            <dd><a href="./schoolcanteen.html">学校单位食堂</a></dd>
-                            <dd><a href="./circulating.html">流通企业</a></dd>
-                            <dd><a href="./catering.html">餐饮企业</a></dd>
-                            <dd><a href="./threesmall.html">三小企业</a></dd>
-                            <dd><a href="./otherbusiness.html">其它企业</a></dd>
+                        <dl class="layui-nav-child" id="company-cate"> <!-- 二级菜单 -->
+                            <!--<dd><a href="./enterprise.html?q=what">企业分布图</a></dd>-->
+                            <!--<dd><a href="./breeding.html">种养殖企业</a></dd>-->
+                            <!--<dd><a href="./manufacturing.html">生产企业</a></dd>-->
+                            <!--<dd><a href="./schoolcanteen.html">学校单位食堂</a></dd>-->
+                            <!--<dd><a href="./circulating.html">流通企业</a></dd>-->
+                            <!--<dd><a href="./catering.html">餐饮企业</a></dd>-->
+                            <!--<dd><a href="./threesmall.html">三小企业</a></dd>-->
+                            <!--<dd><a href="./otherbusiness.html">其它企业</a></dd>-->
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -122,13 +122,13 @@
                             <tr>
                                 <td>
                                     <div class="left_div">
-  <span class="layui-breadcrumb" lay-separator=">">
-    <a href="">首页</a>
-    <a href="">
-      产品管理</a>
-    <a><cite>
-        工业产品</cite></a>
-  </span>
+                                        <span class="layui-breadcrumb" lay-separator=">">
+                                            <a href="">首页</a>
+                                            <a href="">
+                                              产品管理</a>
+                                            <a><cite>
+                                                </cite></a>
+                                        </span>
                                         <select name="" id="" class="new_select">
                                             <option value="">选择省</option>
                                             <option value="">北京</option>
@@ -214,7 +214,7 @@
                                 <td style="text-align:center">
                                     <div style="margin-top:-8px;margin-left: 2px">
                                         <table class="layui-table table_" lay-skin="line">
-                                            <tbody id="product-list">
+
                                             <tr>
                                                 <th>选择</th>
                                                 <th>产品名称</th>
@@ -228,6 +228,7 @@
                                                 <th>操作</th>
                                                 <th></th>
                                             </tr>
+                                            <tbody id="product-list">
                                             <!---<tr class="single">
                                                 <td><label><input type="checkbox"
                                                                   name="td_checkbox"><span name="false"></span></label>
@@ -300,26 +301,28 @@
     function show_product(url, data) {
         $.get(url, data, function (data, status) {
             if (status === 'success') {
-                console.debug('数据接收成功');
+                console.log('数据接收成功');
+                $('#product-list').empty()
                 $.each(data, function (i, element) {
                     console.debug(element);
-                    var td = $('<tobody><tr><td></td></tr></tobody>');
-                    td.html('<label><input type="checkbox" name="td_checkbox"><span name="false"></span></label>');
-                    td.html("<tr><td>" + element.fields.p_name + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_type + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.company + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_standard + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_date + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_period + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_place + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.anti_fake_logo + "</td>></tr>>");
-                    td.html("<tr><td>" + element.fields.p_operate + "</td>></tr>>");
-                    $('#product-list').append(td);
+                    var tr = $('<tr></tr>');
+                    td_check = $('<label><input type="checkbox" name="td_checkbox"><span name="false"></span></label>');
+                    td_name = $("<td>" + element.fields.p_name + "</td>>");
+                    td_type = $("<td>" + element.fields.p_type + "</td>>");
+                    td_company = $("<td>" + element.fields.company + "</td>>");
+                    td_standard = $("<td>" + element.fields.p_standard + "</td>>");
+                    td_date = $("<td>" + element.fields.p_date + "</td>>");
+                    td_period = $("<td>" + element.fields.p_period + "</td>>");
+                    td_place = $("<td>" + element.fields.p_place + "</td>>");
+                    td_atf = $("<td>" + element.fields.anti_fake_logo + "</td>>");
+                    td_operate = $("<td>" + element.fields.p_operate + "</td>>");
+                    tr.append(td_check, td_name, td_type, td_company, td_standard, td_date, td_period, td_place, td_atf, td_operate)
+                    $('#product-list').append(tr);
                 })
             }
         })
     }
-    // 展示产品分类
+    // 展示产品分类函数
     function show_cate(url, data) {
         console.log('in show_cate')
         $.ajax({
@@ -336,21 +339,21 @@
                     $('#product-cate').append(dd);
                 })
             },
-            error : function(XMLHttpRequest, textStatus, errorThrown) {
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert('error' + errorThrown);
             },
         })
     }
-    //  展示公司
+    //  展示公司分类函数
     function show_company(url, data) {
-        $.get(url, data, function (data, status) {
+        $.get(url, data, function(data, status) {
             if (status === 'success') {
                 console.debug('数据接收成功');
                 // 遍历公司数据
                 $.each(data, function (i, element) {
                     var dd = $('<dd><a></a></dd>');
-                    // console.debug(element.fields.cate_name)
-                    dd.children("a").text(element.fields.cate_name);
+                    console.log(element.fields.cate_name)
+                    dd.children("a").text(element.fields.type);
                     dd.children("a").attr('id', element.pk)
                     dd.children("a").attr('href', './company.html?'+'cate_name='+element.pk)
                     $('#company-cate').append(dd);
@@ -358,24 +361,47 @@
             }
         })
     }
-    // 产品绑定点击事件
-    $('#product-cate').on('click', 'dd', function () {
-        // console.debug('sss')
-        id = $(this).children("a").attr('id');
-        var data = {};
-        var url = '/api/product/category/' + id + '/';
-        show_product(url, data);
-    });
-    // 产品分类
+    // 产品绑定点击事件函数
+    function q_pro_by_category(url){
+        $('#product-cate').on('click', 'dd', function () {
+            console.log('click event')
+            id = $(this).children("a").attr('id');
+            var data = {};
+            var url = url + id + '/';
+            show_product(url, data);
+        });
+    }
+    // 开始
     $(function () {
         // 添加产品分类
         var url = 'http://127.0.0.1:8000' + '/api/product/category/';
         var data = {};
         show_cate(url, data);
+        // 绑定产品点击事件
+        q_pro_by_category('http://127.0.0.1:8000/api/product/category/')
         // 添加公司分类
         var url = 'http://127.0.0.1:8000' + '/api/company/category/';
-        //show_company(url, data);
+        show_company(url, data);
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

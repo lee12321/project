@@ -4,14 +4,16 @@ from django.views import View
 from django.core import serializers
 from django.http import JsonResponse
 from product.models import Category, Product
-from company.models import Company
+from company.models import Company, CompanyType
 import json
 
 
 # 对应分类下的商品
 class CategoryView(View):
-    def get(self, request, cate_id=0):
-        # cate_id = request.GET.get('cate_id')
+    def get(self, request):
+        company_types = CompanyType.objects.all()
+        product_types = Category.objects.all()
+        cate_id = request.GET.get('p_type')
         if not cate_id:
             return JsonResponse({'error': 2, 'msg': '参数不存在!'})
         try:
@@ -22,16 +24,20 @@ class CategoryView(View):
         category = Category.objects.get(pk=cate_id)
         # 获取对应产品
         goods = category.product_set.all()
-        goods_data = serializers.serialize('json', goods)
-        goods_data = json.loads(goods_data)
-        list = []
-        for good in goods_data:
-            good['error'] = 0
-            list.append(good)
-        goods_data = json.dumps(list)
-        print(goods_data)
+        # goods_data = serializers.serialize('json', goods)
+        # goods_data = json.loads(goods_data)
+        # list = []
+        # for good in goods_data:
+        #     good['error'] = 0
+        #     list.append(good)
+        # goods_data = json.dumps(list)
+        # print(goods_data)
         # return JsonResponse({'data': goods, 'error': 0})
-        return HttpResponse(goods_data, content_type='application/json')
+        # return HttpResponse(goods_data, content_type='application/json')
+        return render(request, 'product.html', {'products': goods,
+                                                'company_types': company_types,
+                                                'product_types': product_types
+                                                })
 
     def post(self, requtst):
         pass
@@ -49,16 +55,19 @@ class cate_proView(View):
 
 
 # 搜索
-class cate_searchVie(View):
+class CateSearchView(View):
     def get(self, request):
         c_prov = request.GET.get('c_prov', None)
         c_city = request.GET.get('c_city', None)
         c_name = request.GET.get('c_name', None)
         p_name = request.GET.get('p_name', None)
+        company_types = CompanyType.objects.all()
+        product_types = Category.objects.all()
         if p_name:
             products = Product.objects.filter(p_name=p_name)
-            data = serializers.serialize('json', products)
-            return HttpResponse(data, content_type='application/json')
+            return render(request, 'product.html', {'products': products,
+                                                    'company_types': company_types,
+                                                    'product_types': product_types})
         elif c_prov:
             company = Company.objects.filter(province=c_prov)
             if c_city:
@@ -66,12 +75,14 @@ class cate_searchVie(View):
             if c_name:
                 company = company.filter(p_name=c_name)
             products = company.product_set.all()
-            data = serializers.serialize('json', products)
-            return HttpResponse(data, content_type='application/json')
+            return render(request, 'product.html', {'products': products,
+                                                    'company_types': company_types,
+                                                    'product_types': product_types})
         else:
             products = Product.objects.all()
-            data = serializers.serialize('json', products)
-            return HttpResponse(data, content_type="application/json")
+            return render(request, 'product.html', {'products': products,
+                                                    'company_types': company_types,
+                                                    'product_types': product_types})
 
     def post(self, request):
         pass

@@ -1,120 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>首页</title>
-  <link rel="stylesheet" href="./css/common.css">
-<link rel="stylesheet" href="./css/layui.css">
-<script src="./js/jquery-3.3.1.min.js"></script>
-
-
-
-  <link rel="stylesheet" href="./css/prosts.css">
-  <script src='./js/echarts.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/layui.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/prosts.css">
+    <script src='./js/echarts.js'></script>
 </head>
 
 <body style="width:100%; height:100%">
-  <header>
-<img class="logo_img" src="https://img.xiaopiu.com/userImages/img2664166613f66c8.png">
-全国产品防伪溯源验证公共平台大数据监管中心
+<header>
+    <img class="logo_img" src="https://img.xiaopiu.com/userImages/img2664166613f66c8.png">
+    全国产品防伪溯源验证公共平台大数据监管中心
 </header>
 <div class="menu_div">
-  <ul class="layui-nav" lay-filter="">
-    <li class="layui-nav-item">
-      <a href="javascript:;">企业管理</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/business_management/enterprise.html">企业分布图</a></dd>
-        <dd><a href="/business_management/breeding.html">种养殖企业</a></dd>
-        <dd><a href="/business_management/manufacturing.html">生产企业</a></dd>
-        <dd><a href="/business_management/schoolcanteen.html">学校单位食堂</a></dd>
-        <dd><a href="/business_management/circulating.html">流通企业</a></dd>
-        <dd><a href="/business_management/catering.html">餐饮企业</a></dd>
-        <dd><a href="/business_management/threesmall.html">三小企业</a></dd>
-        <dd><a href="/business_management/otherbusiness.html">其它企业</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">产品管理</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="../../promgt/induspro.html">工业产品</a></dd>
-        <dd><a href="../../promgt/housepro.html">农产品</a></dd>
-        <dd><a href="../../promgt/foodpro.html">食品</a></dd>
-        <dd><a href="../../promgt/cospro.html">化妆品</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">防伪溯源监管</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="../../zfscsupervise/prosts.html">防伪产品统计</a></dd>
-        <dd><a href="../../zfscsupervise/sdypro.html">假冒伪劣产品统计</a></dd>
-        <dd><a href="../../zfscsupervise/reltmdtshow.html">实时数据展示</a></dd>
-        <dd><a href="../../zfscsupervise/reltmdtshow-look.html">实时数据展示查看</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">执法检查</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/examination/planaudit.html">检查计划</a></dd>
-        <dd><a href="/examination/enforcement.html">移动执法</a></dd>
-        <dd><a href="/examination/checkresult.html">检查结果</a></dd>
-        <dd><a href="/examination/expirationnotice.html">证件到期提示</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">企业自查</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="../../etpcompre/comprePlan.html">自查计划</a></dd>
-        <dd><a href="../../etpcompre/compreInfo.html">自查信息</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">社会监督</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/social_supervision/eventsreport.html">事件举报(假冒伪劣)</a></dd>
-        <dd><a href="/social_supervision/productreport.html">产品举报(假冒伪劣)</a></dd>
-        <dd><a href="/social_supervision/complaint.html">投诉处理</a></dd>
+    <ul class="layui-nav" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">企业管理</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/business_management/enterprise.html">企业分布图</a></dd>
+                <dd><a href="/business_management/breeding.html">种养殖企业</a></dd>
+                <dd><a href="/business_management/manufacturing.html">生产企业</a></dd>
+                <dd><a href="/business_management/schoolcanteen.html">学校单位食堂</a></dd>
+                <dd><a href="/business_management/circulating.html">流通企业</a></dd>
+                <dd><a href="/business_management/catering.html">餐饮企业</a></dd>
+                <dd><a href="/business_management/threesmall.html">三小企业</a></dd>
+                <dd><a href="/business_management/otherbusiness.html">其它企业</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">产品管理</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="../../promgt/induspro.html">工业产品</a></dd>
+                <dd><a href="../../promgt/housepro.html">农产品</a></dd>
+                <dd><a href="../../promgt/foodpro.html">食品</a></dd>
+                <dd><a href="../../promgt/cospro.html">化妆品</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">防伪溯源监管</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="../../zfscsupervise/prosts.html">防伪产品统计</a></dd>
+                <dd><a href="../../zfscsupervise/sdypro.html">假冒伪劣产品统计</a></dd>
+                <dd><a href="../../zfscsupervise/reltmdtshow.html">实时数据展示</a></dd>
+                <dd><a href="../../zfscsupervise/reltmdtshow-look.html">实时数据展示查看</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">执法检查</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/examination/planaudit.html">检查计划</a></dd>
+                <dd><a href="/examination/enforcement.html">移动执法</a></dd>
+                <dd><a href="/examination/checkresult.html">检查结果</a></dd>
+                <dd><a href="/examination/expirationnotice.html">证件到期提示</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">企业自查</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="../../etpcompre/comprePlan.html">自查计划</a></dd>
+                <dd><a href="../../etpcompre/compreInfo.html">自查信息</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">社会监督</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/social_supervision/eventsreport.html">事件举报(假冒伪劣)</a></dd>
+                <dd><a href="/social_supervision/productreport.html">产品举报(假冒伪劣)</a></dd>
+                <dd><a href="/social_supervision/complaint.html">投诉处理</a></dd>
 
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">黑名单</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/blacklist/blacklist.html">黑名单管理</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">风险预警</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/risk/risk_1.html">风险事件分布</a></dd>
-        <dd><a href="/risk/risk_2.html">假冒伪劣事件分布</a></dd>
-        <dd><a href="/risk/risk_3.html">预警信息发布</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">监管业务</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/supervise/self_inspection.html">自查模板</a></dd>
-        <dd><a href="/supervise/regulation.html">监管模板</a></dd>
-        <dd><a href="/supervise/type.html">执法类型</a></dd>
-      </dl>
-    </li>
-    <li class="layui-nav-item">
-      <a href="javascript:;">用户信息</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/user/info.html">个人信息修改</a></dd>
-        <dd><a href="/user/pd.html">密码修改</a></dd>
-      </dl>
-    </li>
-  </ul>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">黑名单</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/blacklist/blacklist.html">黑名单管理</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">风险预警</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/risk/risk_1.html">风险事件分布</a></dd>
+                <dd><a href="/risk/risk_2.html">假冒伪劣事件分布</a></dd>
+                <dd><a href="/risk/risk_3.html">预警信息发布</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">监管业务</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/supervise/self_inspection.html">自查模板</a></dd>
+                <dd><a href="/supervise/regulation.html">监管模板</a></dd>
+                <dd><a href="/supervise/type.html">执法类型</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">用户信息</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/user/info.html">个人信息修改</a></dd>
+                <dd><a href="/user/pd.html">密码修改</a></dd>
+            </dl>
+        </li>
+    </ul>
 </div>
-  <table class="left_right">
+<table class="left_right">
     <tr>
-      <td class="td_left">
-        <div class="left_div">
+        <td class="td_left">
+            <div class="left_div">
   <span class="layui-breadcrumb" lay-separator=">">
     <a href="">首页</a>
     <a href="">
@@ -122,74 +118,74 @@
     <a><cite>
         防伪产品统计</cite></a>
   </span>
- 
-  <select name="" id="" class="new_select">
-    <option value="">选择省</option>
-    <option value="">北京</option>
-    <option value="">上海</option>
-    <option value="">重庆</option>
-    <option value="">天津</option>
-    <option value="">四川</option>
-    <option value="">黑龙江</option>
-    <option value="">吉林</option>
-    <option value="">辽宁</option>
-    <option value="">内蒙古</option>
-    <option value="">新疆</option>
-  </select>
-  <select name="" id="" class="new_select">
-    <option value="">选择市</option>
-    <option value="">成都</option>
-    <option value="">郑州</option>
-    <option value="">长春</option>
-    <option value="">呼和浩特</option>
-    <option value="">乌鲁木齐</option>
-    <option value="">拉萨</option>
-    <option value="">沈阳</option>
-    <option value="">杭州</option>
-    <option value="">江苏</option>
-    <option value="">南京</option>
-  </select>
-  <select name="" id="" class="new_select">
-    <option value="">选择企业</option>
-    <option value="">广州广达酒厂</option>
-    <option value="">江西万顷农场</option>
-    <option value="">四川飞训信息技术有限公司</option>
-    <option value="">内蒙古毛牦牛牛肉加工厂</option>
-    <option value="">江北皮革厂</option>
-    <option value="">四川盾台酒厂</option>
-    <option value="">河南多汇食品加工厂</option>
-    <option value="">山西黑大哥煤矿开采公司</option>
-    <option value="">江东集团</option>
-    <option value="">北魏集团</option>
-    <option value="">西蜀集团</option>
-  </select>
-  <select name="" id="" class="new_select">
-    <option value="">选择产品</option>
-    <option value="">广达酒</option>
-    <option value="">万顷红富士</option>
-    <option value="">毛毛牦牛牛肉干</option>
-    <option value="">江北皮鞋</option>
-    <option value="">江北皮包</option>
-    <option value="">江北皮夹克</option>
-    <option value="">盾台啤酒</option>
-    <option value="">多汇火腿肠</option>
-    <option value="">黑大哥蜂窝煤</option>
-    <option value="">多汇冷鲜肉</option>
-  </select>
-  <div style="margin: 25px 5px" style="text-align: center">
-    <button type="button" class="btn btn-reg">确认</button>
-  </div>
-  <div style="margin: 5px 3px">
-    <button class="btn  btn-other">导出Excel</button>
-  </div>
-</div>
-      </td>
-      <td class="td_right">
-        <table>
-          <tr>
-            <td>
-              <div id="right_top_div"></div>
-<script type="text/javascript">
+
+                <select name="" id="" class="new_select">
+                    <option value="">选择省</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">重庆</option>
+                    <option value="">天津</option>
+                    <option value="">四川</option>
+                    <option value="">黑龙江</option>
+                    <option value="">吉林</option>
+                    <option value="">辽宁</option>
+                    <option value="">内蒙古</option>
+                    <option value="">新疆</option>
+                </select>
+                <select name="" id="" class="new_select">
+                    <option value="">选择市</option>
+                    <option value="">成都</option>
+                    <option value="">郑州</option>
+                    <option value="">长春</option>
+                    <option value="">呼和浩特</option>
+                    <option value="">乌鲁木齐</option>
+                    <option value="">拉萨</option>
+                    <option value="">沈阳</option>
+                    <option value="">杭州</option>
+                    <option value="">江苏</option>
+                    <option value="">南京</option>
+                </select>
+                <select name="" id="" class="new_select">
+                    <option value="">选择企业</option>
+                    <option value="">广州广达酒厂</option>
+                    <option value="">江西万顷农场</option>
+                    <option value="">四川飞训信息技术有限公司</option>
+                    <option value="">内蒙古毛牦牛牛肉加工厂</option>
+                    <option value="">江北皮革厂</option>
+                    <option value="">四川盾台酒厂</option>
+                    <option value="">河南多汇食品加工厂</option>
+                    <option value="">山西黑大哥煤矿开采公司</option>
+                    <option value="">江东集团</option>
+                    <option value="">北魏集团</option>
+                    <option value="">西蜀集团</option>
+                </select>
+                <select name="" id="" class="new_select">
+                    <option value="">选择产品</option>
+                    <option value="">广达酒</option>
+                    <option value="">万顷红富士</option>
+                    <option value="">毛毛牦牛牛肉干</option>
+                    <option value="">江北皮鞋</option>
+                    <option value="">江北皮包</option>
+                    <option value="">江北皮夹克</option>
+                    <option value="">盾台啤酒</option>
+                    <option value="">多汇火腿肠</option>
+                    <option value="">黑大哥蜂窝煤</option>
+                    <option value="">多汇冷鲜肉</option>
+                </select>
+                <div style="margin: 25px 5px" style="text-align: center">
+                    <button type="button" class="btn btn-reg">确认</button>
+                </div>
+                <div style="margin: 5px 3px">
+                    <button class="btn  btn-other">导出Excel</button>
+                </div>
+            </div>
+        </td>
+        <td class="td_right">
+            <table>
+                <tr>
+                    <td>
+                        <div id="right_top_div"></div>
+                        <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('right_top_div'));
   var option = {
     xAxis: {
@@ -210,59 +206,67 @@
   };
   myChart.setOption(option);
 
-</script>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-  <table  class="layui-table table_"  lay-skin="line" style="text-align:center">
-    <tr>
-      <th>选择</th>
-      <th>产品名称</th>
-      <th>产品类型</th>
-      <th>生产厂家</th>
-      <th>防伪数量</th>
-      <th>操作</th>
-      <th></th>
+
+
+
+
+
+
+
+
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <table class="layui-table table_" lay-skin="line" style="text-align:center">
+                                <tr>
+                                    <th>选择</th>
+                                    <th>产品名称</th>
+                                    <th>产品类型</th>
+                                    <th>生产厂家</th>
+                                    <th>防伪数量</th>
+                                    <th>操作</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="single" style="height:40px">
+                                    <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
+                                    <td>盾台</td>
+                                    <td>酒类</td>
+                                    <td>四川盾台酒厂</td>
+                                    <td>9000</td>
+                                    <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="double" style="height:40px">
+                                    <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
+                                    <td>多汇火腿肠</td>
+                                    <td>肉类</td>
+                                    <td>河南多汇副食品有限公司</td>
+                                    <td>2000</td>
+                                    <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="single" style="height:40px">
+                                    <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
+                                    <td>耐两跑鞋</td>
+                                    <td>服装</td>
+                                    <td>江西耐两服装厂</td>
+                                    <td>1000</td>
+                                    <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
+                                    <td></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
     </tr>
-    <tr class="single" style="height:40px">
-      <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
-      <td>盾台</td>
-      <td>酒类</td>
-      <td>四川盾台酒厂</td>
-      <td>9000</td>
-      <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
-      <td></td>
-    </tr>
-    <tr class="double" style="height:40px">
-      <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
-      <td>多汇火腿肠</td>
-      <td>肉类</td>
-      <td>河南多汇副食品有限公司</td>
-      <td>2000</td>
-      <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
-      <td></td>
-    </tr>
-    <tr class="single" style="height:40px">
-      <td><label><input type="checkbox" name="td_checkbox"><span></span></label></td>
-      <td>耐两跑鞋</td>
-      <td>服装</td>
-      <td>江西耐两服装厂</td>
-      <td>1000</td>
-      <td><a href="../../zfscsupervise/reltmdtshow-look.html">查看</a></td>
-      <td></td>
-    </tr>
-   
-  </table>
-</div>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <script src="./js/layui.all.js"></script>
+</table>
+<script src="./js/layui.all.js"></script>
 <script src="./js/left.js"></script>
 <script src="./js/check.js"></script>
 </body>

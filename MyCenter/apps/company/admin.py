@@ -14,3 +14,5 @@ class CompanyTypeAdmin(admin.ModelAdmin):
 class CompanyAdmin(admin.ModelAdmin):
     class Meta:
         verbose_name = '企业'
+
+    list_display = ('user_name',)
