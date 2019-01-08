@@ -59,7 +59,15 @@ class Company(BaseModel):
     site = models.CharField(verbose_name='注册地址',
                             max_length=64,
                             )
+    business_site = models.CharField(verbose_name='工商地址',
+                                     max_length=64,
 
+                                     )
+    time_limit = models.DateField(verbose_name='营业期限')
+    scope = models.CharField(verbose_name='经营范围',
+                             max_length=64,
+
+                             )
     province = models.CharField(verbose_name='省',
                                 max_length=32,
                                 )
