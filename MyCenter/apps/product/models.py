@@ -45,6 +45,9 @@ class Product(BaseModel):
     p_place = models.CharField(verbose_name="产地",
                                max_length=20
                                )
+    p_number = models.CharField(verbose_name='产品编号',
+                                max_length=15,
+                                )
     anti_fake_logo = models.CharField(verbose_name="防伪标识",
                                       max_length=20,
                                       default="logo",

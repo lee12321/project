@@ -1,0 +1,72 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.left_right {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+}
+
+.td_left {
+  height: 100%;
+  text-align: start;
+}
+
+.td_right {
+  height: 100%;
+  text-align: start;
+}
+
+.right_div {
+  margin-top: 50px;
+  height: 100%;
+  margin-left: 50px;
+}
+
+
+
+.right_top {
+  text-align: center;
+}
+
+.right_top tr {
+  height: 40px;
+  background-color: rgb(202, 202, 202);
+}
+
+.right_top td {
+  width: 240px;
+  color: #ffffff;
+}
+
+
+
+.triangle {
+  margin-top: -8px;
+  margin-left: 80px;
+  color: rgb(202, 202, 202);
+}
+
+.btn-reg {
+  border: none;
+  height: 30px;
+  width: 100px;
+  background: #4848ff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.btn-other {
+  border: none;
+  height: 30px;
+  width: 100px;
+  background: #ff6666;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.left_div {
+  margin-top: 2px;
+}

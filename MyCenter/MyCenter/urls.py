@@ -20,7 +20,8 @@ from apps.company import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/prduct/', include("product.urls", namespace='products')),
-    url(r'^api/company/', include("company.urls", namespace='company'))
+    url(r'^api/product/', include("product.urls", namespace='products')),
+    url(r'^api/company/', include("company.urls", namespace='company')),
+    url(r'^api/anti_fake/', include("anti_fake.urls", namespace='anti_fake')),
 
 ]

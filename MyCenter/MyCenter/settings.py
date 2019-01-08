@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product.apps.ProductConfig',
     'company.apps.CompanyConfig',
-
+    'anti_fake.apps.AntiFakeConfig',
+    'rest_framework',
 
 ]
 
