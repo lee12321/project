@@ -88,13 +88,22 @@ class Company(BaseModel):
                             default='',
                             blank=True
                             )
+    business_site = models.CharField(verbose_name='工商地址',
+                                     max_length=64,)
 
     province = models.ForeignKey(to=Province,
                                  verbose_name='省',
                                  null=True,
                                  blank=True,
                                  )
-
+    time_limit = models.DateField(verbose_name='营业期限',
+                                  null=True,
+                                  blank=True)
+    scope = models.CharField(verbose_name='经营范围',
+                             max_length=64,
+                             default='',
+                             blank=True,
+                             )
     city = models.ForeignKey(to=City,
                              verbose_name='市',
                              null=True,

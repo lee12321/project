@@ -8,6 +8,23 @@ from company.models import Company, CompanyType
 import json
 
 
+class DetailView(View):
+    def get(self, request, pro_id=0):
+        pro_id = int(pro_id)
+        categorys = Category.objects.filter(is_delete=False)
+        good_info = Product.objects.get(pk=pro_id)
+
+        # print(good_info)
+        context = {
+            'good_info': good_info,
+            'categorys': categorys
+        }
+        return render(request, 'product/details.html', context)
+
+    def post(self, request):
+        pass
+
+
 # 对应分类下的商品
 class CategoryView(View):
     def get(self, request):

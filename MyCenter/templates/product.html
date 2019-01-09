@@ -123,6 +123,7 @@
                                                 <th>操作</th>
                                                 <th></th>
                                             </tr>
+<<<<<<< HEAD:MyCenter/templates/product.html
                                             <tbody id="product-list">
                                             {% for p in products %}
                                             <tr class="single">
@@ -138,6 +139,24 @@
                                                     <td>{{ p.p_place }}</td>
                                                     <td>{{ p.anti_fake_logo }}</td>
                                                     <td><a href="../../promgt/induspro_details.html">详情</a></td>
+=======
+                                            {% for good in goods %}
+
+                                                <tr class="single">
+                                                    <td><label><input type="checkbox"
+                                                                      name="td_checkbox"><span
+                                                            name="false"></span></label>
+                                                    </td>
+                                                    <td>{{ good.p_name }}</td>
+                                                    <td>{{ good.p_type }}</td>
+                                                    <td>{{ good.company }}</td>
+                                                    <td>{{ good.p_standard }}</td>
+                                                    <td>{{ good.p_date.isoformat }}</td>
+                                                    <td>{{ good.p_period }}</td>
+                                                    <td>{{ good.p_place }}</td>
+                                                    <td>logo</td>
+                                                    <td><a href="{% url 'products:DetailView' good.pk %}">详情</a></td>
+>>>>>>> cyh:MyCenter/templates/product/product.html
                                                     <td></td>
                                             </tr>
                                             {% endfor %}
@@ -157,95 +176,5 @@
 <script src="./js/layui.all.js"></script>
 <script src="./js/left.js"></script>
 <script src="./js/check.js"></script>
-<!--<script>-->
-<!--// 展示产品函数-->
-<!--function show_product(url, data) {-->
-<!--$.get(url, data, function (data, status) {-->
-<!--if (status === 'success') {-->
-<!--console.log('数据接收成功');-->
-<!--$('#product-list').empty()-->
-<!--$.each(data, function (i, element) {-->
-<!--console.debug(element);-->
-<!--var tr = $('<tr></tr>');-->
-<!--td_check = $('<label><input type="checkbox" name="td_checkbox"><span name="false"></span></label>');-->
-<!--td_name = $("<td>" + element.fields.p_name + "</td>>");-->
-<!--td_type = $("<td>" + element.fields.p_type + "</td>>");-->
-<!--td_company = $("<td>" + element.fields.company + "</td>>");-->
-<!--td_standard = $("<td>" + element.fields.p_standard + "</td>>");-->
-<!--td_date = $("<td>" + element.fields.p_date + "</td>>");-->
-<!--td_period = $("<td>" + element.fields.p_period + "</td>>");-->
-<!--td_place = $("<td>" + element.fields.p_place + "</td>>");-->
-<!--td_atf = $("<td>" + element.fields.anti_fake_logo + "</td>>");-->
-<!--td_operate = $("<td>" + element.fields.p_operate + "</td>>");-->
-<!--tr.append(td_check, td_name, td_type, td_company, td_standard, td_date, td_period, td_place, td_atf, td_operate)-->
-<!--$('#product-list').append(tr);-->
-<!--})-->
-<!--}-->
-<!--})-->
-<!--}-->
-<!--// 展示产品分类函数-->
-<!--function show_cate(url, data) {-->
-<!--console.log('in show_cate')-->
-<!--$.ajax({-->
-<!--url: url,-->
-<!--dataType: "json",-->
-<!--data: data,-->
-<!--success: function(data){-->
-<!--console.log(data);-->
-<!--$.each(data, function (i, element) {-->
-<!--var dd = $('<dd><a></a></dd>');-->
-<!--console.debug(element.fields.cate_name)-->
-<!--dd.children("a").text(element.fields.cate_name);-->
-<!--dd.children("a").attr('id', element.pk)-->
-<!--$('#product-cate').append(dd);-->
-<!--})-->
-<!--},-->
-<!--error: function(XMLHttpRequest, textStatus, errorThrown) {-->
-<!--alert('error' + errorThrown);-->
-<!--},-->
-<!--})-->
-<!--}-->
-<!--//  展示公司分类函数-->
-<!--function show_company(url, data) {-->
-<!--$.get(url, data, function(data, status) {-->
-<!--if (status === 'success') {-->
-<!--console.debug('数据接收成功');-->
-<!--// 遍历公司数据-->
-<!--$.each(data, function (i, element) {-->
-<!--var dd = $('<dd><a></a></dd>');-->
-<!--console.log(element.fields.cate_name)-->
-<!--dd.children("a").text(element.fields.type);-->
-<!--dd.children("a").attr('id', element.pk)-->
-<!--dd.children("a").attr('href', './company.html?'+'cate_name='+element.pk)-->
-<!--$('#company-cate').append(dd);-->
-<!--})-->
-<!--}-->
-<!--})-->
-<!--}-->
-<!--// 产品绑定点击事件函数-->
-<!--function q_pro_by_category(url){-->
-<!--$('#product-cate').on('click', 'dd', function () {-->
-<!--console.log('click event')-->
-<!--id = $(this).children("a").attr('id');-->
-<!--var data = {};-->
-<!--var url = url + id + '/';-->
-<!--show_product(url, data);-->
-<!--});-->
-<!--}-->
-<!--// 开始-->
-<!--$(function () {-->
-<!--// 添加产品分类-->
-<!--var url = 'http://127.0.0.1:8000' + '/api/product/category/';-->
-<!--var data = {};-->
-<!--show_cate(url, data);-->
-<!--// 绑定产品点击事件-->
-<!--q_pro_by_category('http://127.0.0.1:8000/api/product/category/')-->
-<!--// 添加公司分类-->
-<!--var url = 'http://127.0.0.1:8000' + '/api/company/category/';-->
-<!--show_company(url, data);-->
-<!--})-->
-
-
-<!--</script>-->
 </body>
 {% endblock %}

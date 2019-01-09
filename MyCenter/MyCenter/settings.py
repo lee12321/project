@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'management.apps.ManagementConfig',
     'company.apps.CompanyConfig',
+    'anti_fake.apps.AntiFakeConfig',
 ]
 
 MIDDLEWARE = [
