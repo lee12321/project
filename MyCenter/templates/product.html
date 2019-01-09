@@ -123,7 +123,6 @@
                                                 <th>操作</th>
                                                 <th></th>
                                             </tr>
-<<<<<<< HEAD:MyCenter/templates/product.html
                                             <tbody id="product-list">
                                             {% for p in products %}
                                             <tr class="single">
@@ -139,24 +138,6 @@
                                                     <td>{{ p.p_place }}</td>
                                                     <td>{{ p.anti_fake_logo }}</td>
                                                     <td><a href="../../promgt/induspro_details.html">详情</a></td>
-=======
-                                            {% for good in goods %}
-
-                                                <tr class="single">
-                                                    <td><label><input type="checkbox"
-                                                                      name="td_checkbox"><span
-                                                            name="false"></span></label>
-                                                    </td>
-                                                    <td>{{ good.p_name }}</td>
-                                                    <td>{{ good.p_type }}</td>
-                                                    <td>{{ good.company }}</td>
-                                                    <td>{{ good.p_standard }}</td>
-                                                    <td>{{ good.p_date.isoformat }}</td>
-                                                    <td>{{ good.p_period }}</td>
-                                                    <td>{{ good.p_place }}</td>
-                                                    <td>logo</td>
-                                                    <td><a href="{% url 'products:DetailView' good.pk %}">详情</a></td>
->>>>>>> cyh:MyCenter/templates/product/product.html
                                                     <td></td>
                                             </tr>
                                             {% endfor %}
