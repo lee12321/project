@@ -3,10 +3,10 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django import forms
 from .models import User
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.models import Group
+from django.contrib.auth.models import Permission
 
-
-# Register your models here.
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
@@ -40,11 +40,12 @@ class UserChangeForm(forms.ModelForm):
     the user, but replaces the password field with admin's
     password hash display field.
     """
-    password = ReadOnlyPasswordHashField()
+
+    # password = ReadOnlyPasswordHashField()
 
     class Meta:
         model = User
-        fields = ('email', 'password')
+        fields = ('username', 'email', 'password')
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
@@ -55,7 +56,6 @@ class UserChangeForm(forms.ModelForm):
 
 class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
-    # TODO
 
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
@@ -66,21 +66,54 @@ class UserAdmin(BaseUserAdmin):
     list_display = ('username',)
     list_filter = ()
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('can_edit_product', 'can_edit_company')}),
-    )
+        (None, {'fields': ('username', 'password')}),
+        ('个人信息', {'fields': ('first_name', 'last_name', 'email')}),
+        ('权限', {'fields': ('is_active', 'is_staff', 'is_superuser',
+                           'groups')}),)
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2')}
+            'fields': ('username', 'email', 'password1', 'password2')}
          ),
     )
-    search_fields = ('email',)
-    ordering = ('email',)
+    search_fields = ('username',)
     filter_horizontal = ()
 
 
 admin.site.register(User, UserAdmin)
+
+
+# 改变权限组
+
+class CustomGroupAdmin(GroupAdmin):
+    def formfield_for_manytomany(self, db_field, request=None, **kwargs):
+        if db_field.name == 'permissions':
+            qs = kwargs.get('queryset', db_field.remote_field.model.objects)
+            qs = qs.exclude(codename__in=(
+                'add_permission',
+                'change_permission',
+                'delete_permission',
+
+                'add_contenttype',
+                'change_contenttype',
+                'delete_contenttype',
+
+                'add_session',
+                'delete_session',
+                'change_session',
+
+                'add_logentry',
+                'change_logentry',
+                'delete_logentry',
+            ))
+            # Avoid a major performance hit resolving permission names which
+            # triggers a content_type load:
+            kwargs['queryset'] = qs.select_related('content_type')
+        return super(GroupAdmin, self).formfield_for_manytomany(
+            db_field, request=request, **kwargs)
+
+
 admin.site.unregister(Group)
+admin.site.register(Group, CustomGroupAdmin)

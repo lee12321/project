@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_css %}
+<title>种养殖企业查看</title>
+<link rel="stylesheet" href="{% static 'css/check.css' %}">
+{% endblock %}
+
+{% block content %}
+<table class="left_right">
+    <tr>
+        <td class="td_left">
+            <table style="height:100%">
+                <tr>
+                    <td>
+                        <div class="left_div">
+    <span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a href="">
+        企业管理</a>
+      <a href="">
+        种养殖企业</a>
+      <a><cite>查看</cite></a>
+    </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="td_right" style="width: 100%;height: 100%;margin-top: 35px">
+            <table style="width: 100%;height: 100%">
+                <tr style="height:100%">
+                    <td>
+                        <div class="right_div">
+                            <table class="right_top">
+                                <tr>
+                                    <td style="width: 12%">
+                                        <button class="btnDefine" name="nav-info1">基本信息</button>
+                                    </td>
+                                    <td style="padding-left: 130px">
+                                        <button class="btnDefine" name="nav-info2">企业简介</button>
+                                    </td>
+                                    <td>
+                                        <button class="btnDefine" name="nav-info3">企业荣誉</button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="iconClass-default" id="iconPosition">
+                                <i class="layui-icon layui-icon-down"></i>
+                            </p>
+                            <div class="right_bottom" id="pDiv">
+                                <p class="p4">企业名称：{{ company.c_name }}</p><br>
+                                <p class="p5">地址：{{ company.site }}</p><br>
+                                <p class="p5">企业电话：{{ company.tel }}</p><br>
+                                <p class="p5">信用代码：{{ company.credit_code }}</p><br>
+                                <p class="p5">工商地址：{{ company.business_site }}</p><br>
+                                <p class="p5">营业期限：{{ company.time_limit }}</p><br>
+                                <p class="p5">经营范围：{{ company.scope }}</p><br>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<script src="{% static 'js/layui.all.js' %}"></script>
+<script src="{% static 'js/left.js' %}"></script>
+<script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<script>
+$(function () {
+
+$("td [name='nav-info1']").click(function () {
+$("#iconPosition").prop("style","color: #a3a3a3;margin-left: 4%;margin-top: -8px;")
+$("#pDiv").html();
+$("#pDiv").html("<p class=\"p4\">企业名称：{{ company.c_name }}</p><br>\n" +
+"                <p class=\"p5\">地址：{{ company.site }}</p><br>\n" +
+"                <p class=\"p5\">企业电话：{{ company.tel }}</p><br>\n" +
+"                <p class=\"p5\">信用代码：{{ company.credit_code }}</p><br>\n" +
+"                <p class=\"p5\">工商地址：{{ company.business_site }}</p><br>\n" +
+"                <p class=\"p5\">营业期限：{{ company.time_limit }}</p><br>\n" +
+"                <p class=\"p5\">经营范围：{{ company.scope }}</p><br>");
+})
+$("td [name='nav-info2']").click(function () {
+$("#iconPosition").prop("style","color: #a3a3a3;margin-left: 38%;margin-top: -8px;")
+$("#pDiv").html();
+$("#pDiv").html("<p class=\"p4\">企业简介：{{ company.c_intro }}</p>") ;
+
+})
+$("td [name='nav-info3']").click(function () {
+$("#iconPosition").prop("style","color: #a3a3a3;margin-left: 70%;margin-top: -8px;")
+$("#pDiv").html();
+$("#pDiv").html("<p class=\"p4\">{{ company.c_honor }}</p><br>\n");
+})
+})
+
+</script>
+<script src="{% static 'js/check.js' %}"></script>
+{% endblock %}
+
+

@@ -117,7 +117,7 @@ tbody>tr:nth-child(even) td{
                     <td>{{c.tel}}</td>
                     <td>{{c.site}}</td>
                     <td class="anti-fake">是</td>
-                    <td><a href="/emtoflawefm/breedingview.html">查看</a></td>
+                    <td><a href="{% url 'company:detail' c.pk %}">查看</a></td>
                 </tr>
                 {% endfor %}
                 </tbody>

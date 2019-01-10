@@ -32,6 +32,8 @@ SECRET_KEY = 'o-s27gq28v_e%xvl&=r_tgo8wx#0ph6l^uz_)5gc3+nbe$k$3q'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+# 跨域设置
 CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 

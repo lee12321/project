@@ -8,8 +8,12 @@ from company.forms import RegisterForm
 
 def company_detail(request, c_id):
     company = get_object_or_404(Company, pk=c_id)
-    data = serializers.serialize('json', (company,))
-    return HttpResponse(data, content_type="application/json")
+    company_types = CompanyType.objects.all()
+    product_types = Category.objects.all()
+    context = {'company': company,
+               'company_types': company_types,
+               'product_types': product_types}
+    return render(request, 'company_detail.html', context=context)
 
 
 def company_type(request):

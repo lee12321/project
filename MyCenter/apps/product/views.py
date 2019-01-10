@@ -11,15 +11,16 @@ import json
 class DetailView(View):
     def get(self, request, pro_id=0):
         pro_id = int(pro_id)
-        categorys = Category.objects.filter(is_delete=False)
         good_info = Product.objects.get(pk=pro_id)
-
+        company_types = CompanyType.objects.all()
+        product_types = Category.objects.all()
         # print(good_info)
         context = {
             'good_info': good_info,
-            'categorys': categorys
+            'company_types': company_types,
+            'product_types': product_types
         }
-        return render(request, 'product/details.html', context)
+        return render(request, 'details.html', context)
 
     def post(self, request):
         pass

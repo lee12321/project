@@ -89,7 +89,7 @@ class Company(BaseModel):
                             blank=True
                             )
     business_site = models.CharField(verbose_name='工商地址',
-                                     max_length=64,)
+                                     max_length=64, )
 
     province = models.ForeignKey(to=Province,
                                  verbose_name='省',
@@ -122,6 +122,16 @@ class Company(BaseModel):
 
     c_type = models.ForeignKey(to='CompanyType',
                                verbose_name='企业类型',
+                               null=True,
+                               blank=True,
+                               )
+    c_intro = models.CharField(max_length=255,
+                               verbose_name='企业简介',
+                               null=True,
+                               blank=True,
+                               )
+    c_honor = models.CharField(max_length=255,
+                               verbose_name='公司荣誉',
                                null=True,
                                blank=True,
                                )
