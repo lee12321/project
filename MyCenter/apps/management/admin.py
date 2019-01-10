@@ -66,7 +66,7 @@ class UserAdmin(BaseUserAdmin):
     list_display = ('username',)
     list_filter = ()
     fieldsets = (
-        (None, {'fields': ('username', 'password')}),
+        (None, {'fields': ('username', )}),
         ('个人信息', {'fields': ('first_name', 'last_name', 'email')}),
         ('权限', {'fields': ('is_active', 'is_staff', 'is_superuser',
                            'groups')}),)

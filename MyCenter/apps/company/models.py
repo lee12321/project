@@ -6,11 +6,19 @@ from django.core.exceptions import ValidationError
 class Province(BaseModel):
     name = models.CharField(max_length=32, verbose_name='省名')
 
+    class Meta:
+        verbose_name = '省'
+        verbose_name_plural = verbose_name
+
     def __str__(self):
         return self.name
 
 
 class City(BaseModel):
+    class Meta:
+        verbose_name = '市'
+        verbose_name_plural = verbose_name
+
     name = models.CharField(max_length=32, verbose_name='市名')
     province = models.ForeignKey(to=Province)
 
