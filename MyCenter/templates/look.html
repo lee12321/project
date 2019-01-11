@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_css %}
+    <link rel="stylesheet" href="{% static 'css/reltmdtshow-look.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <table class="left_right">
+    <tr style="text-align:center">
+        <td></td>
+        <td class="td_right">
+            <table style="width:100%; height:100%">
+                <tr style="width:100%">
+                    <td>
+                        <div class="right_div">
+                            <table style="border:1px">
+
+                                <div style="height: 10px">
+
+                                </div>
+                                <tr class="single">
+                                    <td>物流码</td>
+                                    <td>产品名</td>
+                                    <td>生产企业</td>
+                                    <td style="border:0px"></td>
+                                </tr>
+                                <tr class="double">
+                                    <td>{{ data.logistics }}</td>
+                                    <td>{{ data.r_product }}</td>
+                                    <td>{{ data.r_product.company }}</td>
+                                    <td style="border:0px"></td>
+                                </tr>
+                                <tr class="single">
+                                    <td>生产日期</td>
+                                    <td>防伪溯源信息</td>
+                                    <td>查询类型</td>
+                                    <td style="border:0px"></td>
+
+                                </tr>
+                                <tr class="double">
+                                    <td>{{ data.r_product.p_date }}</td>
+                                    <td>{{ data.information }}</td>
+                                    <td>{{ data.query_type }}</td>
+                                    <td style="border:0px"></td>
+                                </tr>
+                                <tr class="single">
+
+                                    <td>查询时间</td>
+                                    <td>查询地点</td>
+                                    <td>查询ID</td>
+                                    <td style="border:0px"></td>
+                                </tr>
+                                <tr class="double">
+                                    <td>{{ data.query_time }}</td>
+                                    <td>{{ data.query_site }}</td>
+                                    <td>{{ data.query_id }}</td>
+                                    <td style="border:0px"></td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="width:100%">
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+{% endblock %}
+
+
+
