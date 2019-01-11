@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, Http404, redirect
 from django.views import View
-from company.models import CompanyType, Company, Province, City
+from company.models import CompanyType, Company, Province, City, SelfCheckPlan
 from product.models import Category
 from django.core import serializers
 from company.forms import RegisterForm
@@ -66,3 +66,16 @@ def login(request):
             return redirect('company:search')
         else:
             return redirect('company:login')
+
+
+def self_check_list(request):
+    company_types = CompanyType.objects.all()
+    product_types = Category.objects.all()
+    company = request.GET.get('city', None)
+    plans = SelfCheckPlan.objects.all()
+    if company:
+        plans = plans.filter(company=company)
+
+    return render(request, 'comprePlan.html', context={'plans': plans,
+                                                       'company_types': company_types,
+                                                       'product_types': product_types})

@@ -156,3 +156,30 @@ class Company(BaseModel):
             return None
         elif self.city not in self.province.city_set.all():
             raise ValidationError(_('选择的城市不属于选择的省或暂不支持该城市'))
+
+
+class SelfCheckTemplate(BaseModel):
+    class Meta:
+        verbose_name = '自查信息'
+        verbose_name_plural = verbose_name
+
+    name = models.CharField(max_length=32, verbose_name='模板名')
+
+
+class SelfCheckPlan(BaseModel):
+    class Meta:
+        verbose_name = '自查计划'
+        verbose_name_plural = verbose_name
+
+    company = models.ForeignKey(to=Company, verbose_name='公司')
+    date = models.DateField(verbose_name='时间')
+    is_active = models.BooleanField(verbose_name='是否激活', default=False)
+    template = models.ForeignKey(to=SelfCheckTemplate, verbose_name='自查模板')
+
+
+class SelfCheckInfo(BaseModel):
+    class Meta:
+        verbose_name = '自查信息'
+        verbose_name_plural = verbose_name
+
+    plan = models.ForeignKey(to=SelfCheckPlan, verbose_name='检查计划')

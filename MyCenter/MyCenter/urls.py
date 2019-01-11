@@ -19,15 +19,13 @@ from django.contrib import admin
 from apps.company import views
 
 urlpatterns = [
-
-    # url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     url(r'^product/', include("product.urls", namespace='products')),
     url(r'^company/', include("company.urls", namespace='company')),
     url(r'^anti_fake/', include("anti_fake.urls", namespace='anti_fake')),
 ]
 
-urlpatterns += i18n_patterns(
-    url(r'^admin/', include(admin.site.urls)),
-    prefix_default_language=True,
-)
+# urlpatterns += i18n_patterns(
+#     url(r'^admin/', include(admin.site.urls)),
+#     prefix_default_language=True,
+# )
