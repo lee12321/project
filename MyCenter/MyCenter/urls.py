@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^product/', include("product.urls", namespace='products')),
     url(r'^company/', include("company.urls", namespace='company')),
     url(r'^anti_fake/', include("anti_fake.urls", namespace='anti_fake')),
+    url(r'^$', include("index.urls", namespace='index')),
 ]
 
 # urlpatterns += i18n_patterns(

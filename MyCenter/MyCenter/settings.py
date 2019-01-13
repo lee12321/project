@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'management.apps.ManagementConfig',
     'company.apps.CompanyConfig',
     'anti_fake.apps.AntiFakeConfig',
+    'index',
 ]
 
 MIDDLEWARE = [
@@ -136,5 +137,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
-
